@@ -1,0 +1,67 @@
+﻿@model TwitterClone.UI.Models.PersonVM
+
+@{
+    ViewBag.Title = "profile";
+}
+<div id="currentUser" data-value="@Request.RequestContext.HttpContext.Session["UserId"]" class="hide"></div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/custom")
+
+<h2 class="login-box-msg">Profile of @Session["Username"]</h2>
+<div class="login-box-body">
+    <div class="login-form">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "", @ReadOnly = "true" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Pwd, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success form-save" />
+                    </div>
+                </div>
+               
+            </div>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn_delete_profile btn btn-danger form-delete" />
+            </div>
+        </div>
+    </div>
+</div>
+
+

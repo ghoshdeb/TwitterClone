@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Twitter Clone Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        string name = "Welcome " + Session["Username"];
+    }
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">MY Twitter Clone</a>
+            </div>
+            @*<ul class="nav navbar-nav">
+                
+            </ul>*@
+            <ul class="nav navbar-nav navbar-right">                                    
+                    @if (Session["Username"] != null)
+                    {
+                        <li><a class="navbar-brand">@name</a></li>
+                        <li>@Html.ActionLink("Home", "home", "User")</li>
+                        <li>@Html.ActionLink("Profile", "profile", "User")</li>
+                    }
+                    <li>@Html.ActionLink("Signout", "Login", "User")</li>
+
+
+</ul>
+        </div>
+    </nav>
+    @*<div class="navbar">
+        
+            <div class="col-sm-4"></div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("MY Twitter Clone","","", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav topnav-right">
+                        <li>@Html.ActionLink(name, "", "")</li>
+                        <li>@Html.ActionLink("Home", "home", "User")</li>
+                        <li>@Html.ActionLink("Profile", "profile", "User")</li>
+                        <li>@Html.ActionLink("Signout", "Login", "User")</li>
+                    </ul>
+                </div>*@
+            
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My Twitter Clone Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("css", required: false)
+</body>
+</html>

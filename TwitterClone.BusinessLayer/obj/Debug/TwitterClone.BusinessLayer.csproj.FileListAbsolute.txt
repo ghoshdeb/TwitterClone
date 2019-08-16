@@ -1,0 +1,13 @@
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.BusinessLayer.dll.config
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.BusinessLayer.dll
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.BusinessLayer.pdb
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\EntityFramework.dll
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.DataLayer.dll
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.DataLayer.pdb
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\TwitterClone.DataLayer.dll.config
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\EntityFramework.xml
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\obj\Debug\TwitterClone.BusinessLayer.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\obj\Debug\TwitterClone.BusinessLayer.dll
+c:\users\admin\documents\visual studio 2017\Projects\TwitterClone.DataLayer\TwitterClone.BusinessLayer\obj\Debug\TwitterClone.BusinessLayer.pdb

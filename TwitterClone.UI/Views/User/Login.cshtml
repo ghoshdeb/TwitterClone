@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 class="login-box-msg">Welcome to Twitter Clone</h2>
+<div class="login-box-body">
+    <h3 class="login-box-msg">Login</h3>
+    <div class="login-form">
+        @using (Html.BeginForm("Login", "User", "Post"))
+        {
+            <div class="form-group login-box-msg">
+                <label for="username">Username:</label>
+                @Html.TextBox("uname")
+            </div>
+            <div class="form-group login-box-msg">
+                <label for="password">Password:</label>
+                @Html.Password("Pwd")
+            </div>
+            <div class="row">                
+                <div class="col-xs-4">
+                    <input type="submit" name="submit" value="Login" id="submit" class="btn btn-success form-login">
+                </div><!-- /.col -->
+            </div>
+            <label for="NewUser" class="new-user col-lg-2">New User?  </label><span class="glyphicon glyphicon-user"></span>@Html.ActionLink("SignUp", "signup", new { @class = "text-center" })
+            <span class="login-box-msg alert-danger">@TempData["err"]</span>
+        }
+    </div>
+    
+</div>
+

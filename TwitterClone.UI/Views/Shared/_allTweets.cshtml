@@ -1,0 +1,107 @@
+﻿@model TwitterClone.DataLayer.PERSON
+
+
+@Scripts.Render("~/bundles/jquery")
+@Styles.Render("~/Content/css")
+
+@section css
+{
+    @*<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css" rel="Stylesheet" type="text/css" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+}
+
+
+@section scripts
+{
+    @*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>*@
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+}
+<script>
+    $(document).ready(function () {
+        function GetAll() {
+
+            $.ajax({
+                url: "GetAllTweet",
+                type: "get",
+                datatype: "json",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        var date = v.created;
+                       // var tweetdate = new date(parseint(date.substr(6)));
+                    //var month = nowdate.getmonth();
+                    /*var mothname = nowdate.tostring("mmm")*/;
+                        //alert(month)
+
+                    let row = '<tr><td>' + v.user_id + '</td><td>' + v.message + '</td><td>' + date + '</td></tr>';
+                        $('#t1').append(row)
+                    });
+                },
+                error: function (xhr) {
+                    alert("error occurs")
+                }
+            });
+        }
+        GetAll();
+        $("#update").click(function () {
+            let msg = $("#message").val();
+
+            $.ajax({
+                url: "AddTweet",
+                type: "POST",
+                data: { message: msg },
+                dataType: "json",
+                success: function (data) {
+                    $("#message").val("");
+                    $("#t1").html('')
+                    GetAll();
+                },
+                error: function (XRH) {
+                    alert("error occurs")
+                }
+            });
+        });
+    })
+</script>
+
+<div class="col-sm-9 col-md-6 col-lg-8 sidenav">
+    <h4> What are you doing?</h4>
+    @*<p>@Html.TextArea("message")</p>*@
+    <textarea cols="60" id="message" name="message" rows="5"></textarea>
+    <input type="button" value="Update" id="update" />
+    <h4>Tweets</h4>
+    <div class="table-responsive">
+        <table id="t1" class="table">
+            
+
+            @*@foreach (var item in Model)
+            {
+                foreach (var item1 in item.tweet)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item1.user_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item1.message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item1.created)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item1.user_id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item1.user_id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item1.user_id })
+                    </td>
+                </tr>
+                }
+            }*@
+
+        </table>
+        <table id="t1" class="table hide">
+            </table>
+</div>
+</div>
